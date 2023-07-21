@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+
+{% block content %}
+
+<div class="signup">
+    <label for="chk" aria-hidden="true">
+        Your email has been verified please login.
+    </label>
+    <a href="{% url 'login_attempt' %}"><button>Login</button></a>
+</div>
+    
+{% endblock content %}
+    

@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="main">
+    <label for="chk" aria-hidden="true">Welcome</label>
+    <a href="{% url 'login_attempt' %}">
+        <button>Sign In</button>
+    </a>
+    <a href="{% url 'register_attempt' %}">
+        <button>Sign Up</button>
+    </a>
+</div>
+    
+{% endblock content %}
+    

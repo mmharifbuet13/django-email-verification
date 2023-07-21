@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+
+{% block content %}
+
+{% if messages %}
+<div class="main">
+	{% for message in messages %}
+		<label for="chk" aria-hidden="true">{{ message }}</label>
+	{% endfor %}
+</div>
+{% endif %}
+
+<div class="main">  	
+	<input type="checkbox" id="chk" aria-hidden="true">
+
+		<div class="signup"> <!-- This is the login section of the page -->
+			<form method="POST">
+				{% csrf_token %}
+				<label for="chk" aria-hidden="true">Login</label>
+				<input type="text" name="login_username" placeholder="Username" required="">
+				<input type="password" name="login_password" placeholder="Password" required="">
+				<button>Login</button>
+			</form>
+		</div>
+
+		<div class="login">
+			<!-- <form method-="POST">
+				{% csrf_token %} -->
+					<label for="chk" aria-hidden="true"><a href="{% url 'register_attempt' %}">Registration</a></label>
+				<!-- <input type="text" name="username" placeholder="User name" required="">
+				<input type="email" name="email" placeholder="Email" required="">
+				<input type="password" name="password" placeholder="Password" required=""> -->
+				<!-- <button>Register</button>
+			</form> -->
+		</div>
+
+</div>
+
+
+
+{% endblock content %}
+    
